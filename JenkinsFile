@@ -15,7 +15,7 @@ pipeline {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        sh 'cd azure-spring-mysql && mvn clean package'
+        sh 'azure-spring-mysql . && mvn clean package'
       }
     }
     stage('Static Code Analysis') {
