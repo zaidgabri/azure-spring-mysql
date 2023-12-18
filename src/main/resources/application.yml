@@ -1,16 +1,14 @@
-sql-db: <DATABASE-NAME>
-sql-username: <DATABASE-USERNAME>
-sql-password: <DATABASE-PASSWORD>
-sql-servername: <SERVER-NAME>
-
 server:
-  port: ${port:8077}
+  port: 8081
 
 spring:
   datasource:
-    url: jdbc:sqlserver://${sql-servername}.database.windows.net:1433;database=${sql-db};user=${sql-username}@${sql-servername};password=${sql-password};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30
-    username: ${sql-username}
-    password: ${sql-password}
+    url: jdbc:mysql://${DB_SERVER}:${DB_PORT:3306}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
