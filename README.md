@@ -1,1 +1,1 @@
-# azure-spring-mysql
+# azure-spring-mssql-demo
